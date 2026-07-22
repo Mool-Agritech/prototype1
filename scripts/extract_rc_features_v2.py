@@ -30,9 +30,9 @@ GEE_PROJECT = 'earth-mrv'
 KHARIF_YEARS = [2021, 2022, 2023, 2024, 2025]
 BUFFER_M = 5000
 SCALE_M  = 1000
-PARTIAL  = Path('yavatmal_rc_features_v2_partial.csv')
-OUT_V2   = Path('yavatmal_rc_features_v2.csv')
-OUT_MODEL= Path('yavatmal_rc_model_ready_v2.csv')
+PARTIAL  = Path('data/processed/yavatmal_rc_features_v2_partial.csv')
+OUT_V2   = Path('data/processed/yavatmal_rc_features_v2.csv')
+OUT_MODEL= Path('data/processed/yavatmal_rc_model_ready_v2.csv')
 
 # ── GEE auth ──────────────────────────────────────────────────────────────────
 try:
@@ -153,7 +153,7 @@ def extract_new_features(lat, lon, year):
 
 
 # ── Main loop ─────────────────────────────────────────────────────────────────
-existing_v1 = pd.read_csv('yavatmal_rc_features.csv')
+existing_v1 = pd.read_csv('data/processed/yavatmal_rc_features_v1.csv')
 coords_df   = existing_v1[['taluka', 'revenue_circle', 'lat', 'lon',
                             'year', 'geocode_flag']].copy()
 
@@ -217,7 +217,7 @@ print(f'✓ Full v2 feature set: {len(v2)} rows, {len(v2.columns)} cols → {OUT
 
 # ── Join PMFBY with per-peril monetary loss ratios ────────────────────────────
 print('\nJoining PMFBY (monetary loss ratios)...')
-pmfby = pd.read_csv('pmfby_yavatmal_iu_kharif.csv')
+pmfby = pd.read_csv('data/raw/pmfby_yavatmal_iu_kharif.csv')
 
 # All claim columns are in Lac (₹100,000), sum_insured_rs is in absolute Rupees
 claim_cols = ['claim_total', 'claim_yield_based', 'claim_localized',

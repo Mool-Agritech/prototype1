@@ -9,7 +9,7 @@ import requests
 import time
 import sys
 
-df = pd.read_csv("pmfby_yavatmal_iu_kharif.csv")
+df = pd.read_csv("data/raw/pmfby_yavatmal_iu_kharif.csv")
 unique = (df[["taluka", "revenue_circle"]]
           .drop_duplicates()
           .sort_values(["taluka", "revenue_circle"])
@@ -61,7 +61,7 @@ for i, row in unique.iterrows():
     time.sleep(1.1)
 
 out = pd.DataFrame(results)
-out.to_csv("yavatmal_rc_coords.csv", index=False)
+out.to_csv("data/processed/yavatmal_rc_coords.csv", index=False)
 found = out["lat"].notna().sum()
 print(f"\nGeocoded {found}/{len(out)} revenue circles → yavatmal_rc_coords.csv")
 print(f"Breakdown: {out['geocode_flag'].value_counts().to_dict()}")

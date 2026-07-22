@@ -16,7 +16,7 @@ TARGET_STATE   = "MAHARASHTRA"
 TARGET_DISTRICT= "Yavatmal"
 SEASON         = "Kharif"
 YEARS          = [2021, 2022, 2023, 2024, 2025]
-OUT_FILE       = Path("pmfby_yavatmal_iu_kharif.csv")
+OUT_FILE       = Path("data/raw/pmfby_yavatmal_iu_kharif.csv")
 
 COLS = [
     "sno", "revenue_circle", "insurance_units", "farmers",

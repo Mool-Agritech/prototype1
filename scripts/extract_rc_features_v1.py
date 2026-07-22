@@ -6,7 +6,7 @@ centroids.  Checkpoints every 10 rows so it can be safely interrupted and resume
 
 Usage:
     source .venv/bin/activate
-    python3 -u extract_rc_features.py 2>&1 | tee extract_log.txt
+    python3 -u scripts/extract_rc_features_v1.py 2>&1 | tee logs/extract_v1_log.txt
 
 Outputs:
     yavatmal_rc_features.csv     (satellite features, one row per RC × year)
@@ -26,8 +26,8 @@ KHARIF_START_MD = '06-01'
 KHARIF_END_MD   = '10-31'
 BUFFER_M       = 5000    # 5 km radius
 SCALE_M        = 1000    # reducer scale
-OUT_FEATURES   = Path('yavatmal_rc_features.csv')
-OUT_MODEL      = Path('yavatmal_rc_model_ready.csv')
+OUT_FEATURES   = Path('data/processed/yavatmal_rc_features_v1.csv')
+OUT_MODEL      = Path('data/processed/yavatmal_rc_model_ready_v1.csv')
 
 # ── GEE auth ──────────────────────────────────────────────────────────────────
 try:
@@ -179,7 +179,7 @@ def extract_features(lat, lon, year):
 
 
 # ── Main loop ─────────────────────────────────────────────────────────────────
-coords_df = pd.read_csv('yavatmal_rc_coords.csv').dropna(subset=['lat', 'lon'])
+coords_df = pd.read_csv('data/processed/yavatmal_rc_coords.csv').dropna(subset=['lat', 'lon'])
 
 if OUT_FEATURES.exists():
     existing = pd.read_csv(OUT_FEATURES)
@@ -238,7 +238,7 @@ print(f'\n✓ Features saved: {len(df_feats)} rows → {OUT_FEATURES}')
 
 # ── Join with PMFBY ───────────────────────────────────────────────────────────
 print('\nJoining with PMFBY claim data...')
-pmfby = pd.read_csv('pmfby_yavatmal_iu_kharif.csv')
+pmfby = pd.read_csv('data/raw/pmfby_yavatmal_iu_kharif.csv')
 for c in ['farmers', 'claim_total', 'sum_insured_rs']:
     pmfby[c] = pd.to_numeric(pmfby[c], errors='coerce')
 
