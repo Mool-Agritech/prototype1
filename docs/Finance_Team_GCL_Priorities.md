@@ -15,11 +15,7 @@ Everything the finance team builds should ladder up to this.
 
 ---
 
-
-
-## What to actually produce 
-
-
+## What to actually produce
 
 ### 1. Unit economics — one clean table
 
@@ -42,8 +38,6 @@ Build a single per-acre, per-season table. Rough numbers are fine — directiona
 
 ---
 
-
-
 ### 2. Funding waterfall — who pays and when
 
 Three sentences and a simple diagram is enough for the pitch.
@@ -55,8 +49,6 @@ Three sentences and a simple diagram is enough for the pitch.
 **Precedent to cite:** APCNF assembled ₹1,955 Cr this way — 36% govt grants, 41% KfW concessional loan, 14% philanthropy. We follow the same sequence.
 
 ---
-
-
 
 ### 3. One comparison vs PMFBY (for the demo segment)
 
@@ -73,19 +65,19 @@ Pull this directly from our backtest output. Finance team doesn't need to build 
 
 ---
 
-
-
-### 4. Actuarial model — yes, build it (AI-assisted, ~half a day)
+### 4. Actuarial model — yes, build it 
 
 You have everything needed. Pull `data/processed/yavatmal_rc_model_ready_v2.csv` from the repo.
 
 **Inputs from our backtest (already computed):**
+
 - Loss frequency: 44% of RC-years have `rate_total > 10%`
 - Loss severity distribution: `rate_total` column (0–54.7%, mean 8.8%) — fit a Beta or LogNormal
 - Per-peril frequency: drought 35%, flood 56%, heat 0% (2021–2024 base)
 - Trigger frequency (our satellite): 72% fire rate
 
 **What to build:**
+
 1. Fit a severity distribution to `rate_total` on the 169 loss events → get E[loss | loss occurs]
 2. Pure premium = P(trigger fires) × E[loss severity] × sum insured per acre
 3. Gross premium = pure premium × (1 + expense ratio ~25%) × (1 + profit margin ~10%)
@@ -97,6 +89,7 @@ You have everything needed. Pull `data/processed/yavatmal_rc_model_ready_v2.csv`
 ---
 
 ### 5. What NOT to do this week
+
 - ❌ Don't model reinsurance structure
 - ❌ Don't price carbon credits (treat as future upside, not base case)
 - ❌ Don't negotiate with NBFCs — the loan embed is deprioritised
@@ -104,12 +97,3 @@ You have everything needed. Pull `data/processed/yavatmal_rc_model_ready_v2.csv`
 
 ---
 
-
-
-## The one question the judges will ask
-
-> **"Who actually pays the premium?"**
-
-Answer: In Phase 1, development finance institutions (DFIs) and state schemes — same funders who backed APCNF. The farmer is the beneficiary, not the payer. This is what makes it an agroecology product, not just an insurance product.
-
-Make sure everyone on the team can say this clearly.
