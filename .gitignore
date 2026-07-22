@@ -1,0 +1,30 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Jupyter
+.ipynb_checkpoints/
+.virtual_documents/
+*.ipynb_checkpoints
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs / temp
+nohup.out
+*.log
+
+# Large model artifacts (keep CSVs, ignore raw tile downloads)
+vidarbha_outputs/dem_tiles/
+
+# Credentials / secrets (never commit these)
+*.env
+secrets.json
+credentials.json
+token.json

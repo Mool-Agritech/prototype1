@@ -1,0 +1,5 @@
+site,season,days_observed,CSI_mean,CSI_p90,threshold_θ,trigger_fires,SAR_confirms,status
+Yavatmal,2025 kharif,153,0.1958,0.8599,0.3351,False,False,NO TRIGGER
+Akola,2025 kharif,153,0.2691,1.1715,0.3351,False,False,NO TRIGGER
+Wardha,2025 kharif,153,0.2198,0.8421,0.3351,False,False,NO TRIGGER
+Chandrapur,2025 kharif,153,0.1942,0.6331,0.3351,False,False,NO TRIGGER
