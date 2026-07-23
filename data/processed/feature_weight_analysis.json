@@ -1,7 +1,6 @@
-// The weights of the columns in formula and the composite score
-// Besides this, we have feature summary 
 {
   "target": "rate_yield",
+  "comments": "The weights of the columns in formula and the composite score",
   "weighting_method": "average absolute Pearson and Spearman correlation with target, then normalized",
   "drought_weights": {
     "VHI": 0.40608013853426456,
@@ -23,6 +22,9 @@
     "Heat_Score": 0.414684469467858
   },
   "feature_summary": [
+    {
+      "comments": "The feature analysis for each feature and its correlation with yield"
+    }
     {
       "feature": "cumRain_mm",
       "missing_pct": 0.0,
