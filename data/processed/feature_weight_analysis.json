@@ -1,3 +1,5 @@
+# The weights of the columns in formula and the composite score
+# Besides this, we have feature summary 
 {
   "target": "rate_yield",
   "weighting_method": "average absolute Pearson and Spearman correlation with target, then normalized",
