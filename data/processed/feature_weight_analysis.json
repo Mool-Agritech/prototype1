@@ -1,0 +1,120 @@
+{
+  "target": "rate_yield",
+  "weighting_method": "average absolute Pearson and Spearman correlation with target, then normalized",
+  "drought_weights": {
+    "VHI": 0.40608013853426456,
+    "DrySpellDays": 0.4493116063127966,
+    "DrySpellJulAug": 0.14460825515293893
+  },
+  "flood_weights": {
+    "CumulativeRainfall": 0.42896454782468146,
+    "HeavyRainDays": 0.3528095373009555,
+    "SoilMoistureWetDays": 0.21822591487436319
+  },
+  "heat_weights": {
+    "LST_Anomaly": 0.9351177062311752,
+    "GDD_Surplus": 0.06488229376882483
+  },
+  "composite_weights": {
+    "Drought_Score": 0.09816752638000516,
+    "Flood_Score": 0.4871480041521368,
+    "Heat_Score": 0.414684469467858
+  },
+  "feature_summary": [
+    {
+      "feature": "cumRain_mm",
+      "missing_pct": 0.0,
+      "mean": 1256.4644462226802,
+      "std": 212.71898502848956,
+      "pearson": 0.44801951705258836,
+      "spearman": 0.4683842350393804,
+      "abs_mean": 0.4582018760459844
+    },
+    {
+      "feature": "lst_anom_augsep",
+      "missing_pct": 0.0,
+      "mean": -0.8857895891875674,
+      "std": 1.3209145484513978,
+      "pearson": 0.2881568043998908,
+      "spearman": 0.46756950985879225,
+      "abs_mean": 0.3778631571293415
+    },
+    {
+      "feature": "heavy_rain_days",
+      "missing_pct": 0.0,
+      "mean": 2.203523754060774,
+      "std": 2.073804576177801,
+      "pearson": 0.40586215638426615,
+      "spearman": 0.34785044153552,
+      "abs_mean": 0.3768562989598931
+    },
+    {
+      "feature": "sm_wet_days",
+      "missing_pct": 0.0,
+      "mean": 102.23681769249188,
+      "std": 13.16747388388532,
+      "pearson": 0.19443755542716665,
+      "spearman": 0.2717619200509384,
+      "abs_mean": 0.23309973773905251
+    },
+    {
+      "feature": "drySpellDays",
+      "missing_pct": 0.0,
+      "mean": 81.60196136089479,
+      "std": 11.06220452355602,
+      "pearson": -0.22316383603367024,
+      "spearman": -0.2270463862639887,
+      "abs_mean": 0.22510511114882947
+    },
+    {
+      "feature": "VHI_mean",
+      "missing_pct": 0.0,
+      "mean": 0.6388039495927613,
+      "std": 0.05876242431520924,
+      "pearson": -0.16587729355651734,
+      "spearman": -0.24101499872248708,
+      "abs_mean": 0.2034461461395022
+    },
+    {
+      "feature": "dry_spell_julaug",
+      "missing_pct": 0.0,
+      "mean": 21.349740758930036,
+      "std": 5.071110008910614,
+      "pearson": -0.03171666529127643,
+      "spearman": 0.11318080404575598,
+      "abs_mean": 0.0724487346685162
+    },
+    {
+      "feature": "gdd_surplus",
+      "missing_pct": 0.0,
+      "mean": -0.0316630697552682,
+      "std": 0.23073938747045133,
+      "pearson": 0.020815148796527332,
+      "spearman": -0.03162023597250125,
+      "abs_mean": 0.02621769238451429
+    }
+  ],
+  "component_correlations": [
+    {
+      "component": "Drought_Score",
+      "pearson": -0.0730071859652986,
+      "spearman": 0.09417029189099574,
+      "abs_mean": 0.08358873892814717,
+      "weight": 0.09816752638000516
+    },
+    {
+      "component": "Flood_Score",
+      "pearson": 0.4390684357735256,
+      "spearman": 0.39053558584181003,
+      "abs_mean": 0.4148020108076678,
+      "weight": 0.4871480041521368
+    },
+    {
+      "component": "Heat_Score",
+      "pearson": 0.2731585526975406,
+      "spearman": 0.43304141248699873,
+      "abs_mean": 0.35309998259226966,
+      "weight": 0.414684469467858
+    }
+  ]
+}
