@@ -1,4 +1,4 @@
-# Finance Team — GCL Priority Tasks (deadline 25/26 Jul)
+# Finance Team — GCL Priority Tasks (deadline 25 Jul)
 
 > Context: 3-min pitch video. Agroecology transition is the core pitch; parametric insurance is a supporting feature. The prototype/model is separate. Finance team needs to make the **unit economics and funding story coherent and defensible** — not exhaustive.
 
@@ -15,7 +15,11 @@ Everything the finance team builds should ladder up to this.
 
 ---
 
+
+
 ## What to actually produce
+
+
 
 ### 1. Unit economics — one clean table
 
@@ -38,6 +42,8 @@ Build a single per-acre, per-season table. Rough numbers are fine — directiona
 
 ---
 
+
+
 ### 2. Funding waterfall — who pays and when
 
 Three sentences and a simple diagram is enough for the pitch.
@@ -49,6 +55,8 @@ Three sentences and a simple diagram is enough for the pitch.
 **Precedent to cite:** APCNF assembled ₹1,955 Cr this way — 36% govt grants, 41% KfW concessional loan, 14% philanthropy. We follow the same sequence.
 
 ---
+
+
 
 ### 3. One comparison vs PMFBY (for the demo segment)
 
@@ -65,7 +73,9 @@ Pull this directly from our backtest output. Finance team doesn't need to build 
 
 ---
 
-### 4. Actuarial model — yes, build it 
+
+
+### 4. Actuarial model — yes, build it
 
 You have everything needed. Pull `data/processed/yavatmal_rc_model_ready_v2.csv` from the repo.
 
@@ -87,6 +97,8 @@ You have everything needed. Pull `data/processed/yavatmal_rc_model_ready_v2.csv`
 **Benchmark to check against:** PMFBY cotton kharif premium in Yavatmal is ~₹2,400/acre gross (farmer pays ~₹480, govt pays rest). Our gross premium should be in the same order of magnitude.
 
 ---
+
+
 
 ### 5. What NOT to do this week
 

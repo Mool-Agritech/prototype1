@@ -1,0 +1,234 @@
+{
+  "data_version": "v3 (2018-2025, 880 rows)",
+  "backtest_years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "heat_features": "EXCLUDED \u2014 see Trigger_Threshold_Review_Notes.md \u00a71",
+  "methodology": {
+    "drought_target": "rate_yield",
+    "flood_target": "rate_local",
+    "composite_target": "rate_total",
+    "weighting_method": "avg abs(Pearson, Spearman) with peril-specific target, then normalized",
+    "key_improvement_over_v1": "per-peril target alignment + LOYO stability + within-year decomposition"
+  },
+  "drought_weights": {
+    "VHI": 0.6895558527970673,
+    "DrySpellDays": 0.148984169825234,
+    "DrySpellJulAug": 0.16145997737769857
+  },
+  "flood_weights": {
+    "CumulativeRainfall": 0.4358595447886319,
+    "HeavyRainDays": 0.5473793661671796,
+    "SoilMoistureWetDays": 0.01676108904418847
+  },
+  "composite_weights": {
+    "Drought_Score": 0.5315284101344643,
+    "Flood_Score": 0.46847158986553566
+  },
+  "loyo_stability": {
+    "drought": {
+      "VHI": {
+        "mean": 0.5642,
+        "std": 0.2177,
+        "cv_pct": 38.6,
+        "range": [
+          0.137,
+          0.7541
+        ]
+      },
+      "DrySpellDays": {
+        "mean": 0.2419,
+        "std": 0.1923,
+        "cv_pct": 79.5,
+        "range": [
+          0.0826,
+          0.6884
+        ]
+      },
+      "DrySpellJulAug": {
+        "mean": 0.1939,
+        "std": 0.0995,
+        "cv_pct": 51.3,
+        "range": [
+          0.0788,
+          0.4182
+        ]
+      }
+    },
+    "flood": {
+      "CumulativeRainfall": {
+        "mean": 0.3736,
+        "std": 0.086,
+        "cv_pct": 23.0,
+        "range": [
+          0.1797,
+          0.4552
+        ]
+      },
+      "HeavyRainDays": {
+        "mean": 0.4518,
+        "std": 0.1311,
+        "cv_pct": 29.0,
+        "range": [
+          0.1998,
+          0.5802
+        ]
+      },
+      "SoilMoistureWetDays": {
+        "mean": 0.1746,
+        "std": 0.1942,
+        "cv_pct": 111.3,
+        "range": [
+          0.0143,
+          0.6205
+        ]
+      }
+    }
+  },
+  "feature_correlations": [
+    {
+      "feature": "VHI_mean",
+      "pooled_pearson": -0.4055,
+      "pooled_spearman": -0.3887,
+      "pooled_p": 0.0,
+      "abs_mean": 0.3971,
+      "n": 654,
+      "years_sig_positive": 0,
+      "years_sig_negative": 2
+    },
+    {
+      "feature": "heavy_rain_days",
+      "pooled_pearson": 0.3646,
+      "pooled_spearman": 0.3429,
+      "pooled_p": 0.0,
+      "abs_mean": 0.3537,
+      "n": 654,
+      "years_sig_positive": 3,
+      "years_sig_negative": 1
+    },
+    {
+      "feature": "cumRain_mm",
+      "pooled_pearson": 0.2816,
+      "pooled_spearman": 0.1677,
+      "pooled_p": 1.6e-05,
+      "abs_mean": 0.2246,
+      "n": 654,
+      "years_sig_positive": 2,
+      "years_sig_negative": 3
+    },
+    {
+      "feature": "sm_wet_days",
+      "pooled_pearson": 0.1911,
+      "pooled_spearman": 0.0573,
+      "pooled_p": 0.143069,
+      "abs_mean": 0.1242,
+      "n": 654,
+      "years_sig_positive": 2,
+      "years_sig_negative": 1
+    },
+    {
+      "feature": "dry_spell_julaug",
+      "pooled_pearson": 0.0055,
+      "pooled_spearman": 0.1496,
+      "pooled_p": 0.000124,
+      "abs_mean": 0.0775,
+      "n": 654,
+      "years_sig_positive": 2,
+      "years_sig_negative": 1
+    },
+    {
+      "feature": "drySpellDays",
+      "pooled_pearson": -0.001,
+      "pooled_spearman": 0.1026,
+      "pooled_p": 0.008645,
+      "abs_mean": 0.0518,
+      "n": 654,
+      "years_sig_positive": 2,
+      "years_sig_negative": 1
+    }
+  ],
+  "composite_correlations": [
+    {
+      "component": "Drought_Score",
+      "pearson": 0.3208065874408571,
+      "spearman": 0.34197536953168417,
+      "spearman_p": 2.2255628692456445e-19,
+      "abs_mean": 0.33139097848627064,
+      "n": 654,
+      "weight": 0.5315284101344643
+    },
+    {
+      "component": "Flood_Score",
+      "pearson": 0.3534020727113097,
+      "spearman": 0.2307520594047321,
+      "spearman_p": 2.363960487413498e-09,
+      "abs_mean": 0.29207706605802086,
+      "n": 654,
+      "weight": 0.46847158986553566
+    }
+  ],
+  "apy_validation": [
+    {
+      "year": 2018,
+      "drought_score": 0.6502999268109104,
+      "flood_score": 0.23220962600474437,
+      "composite": 0.4544364988848857,
+      "rate_total": 0.0098315878075583,
+      "cotton_yield": 312
+    },
+    {
+      "year": 2019,
+      "drought_score": 0.6439311134759609,
+      "flood_score": 0.1997069243755943,
+      "composite": 0.43582470135138374,
+      "rate_total": 0.24872066294407932,
+      "cotton_yield": 198
+    },
+    {
+      "year": 2020,
+      "drought_score": 0.2063901746469888,
+      "flood_score": 0.20261073807315713,
+      "composite": 0.20461961598644993,
+      "rate_total": 0.047856614272674215,
+      "cotton_yield": 274
+    },
+    {
+      "year": 2021,
+      "drought_score": 0.40605526705952344,
+      "flood_score": 0.2043832266251303,
+      "composite": 0.3115776456457967,
+      "rate_total": 0.09955095969532426,
+      "cotton_yield": 258
+    },
+    {
+      "year": 2022,
+      "drought_score": 0.45261746351654086,
+      "flood_score": 0.6609811066252772,
+      "composite": 0.5502299106738655,
+      "rate_total": 0.21674371365861336,
+      "cotton_yield": 207
+    },
+    {
+      "year": 2023,
+      "drought_score": 0.5980748153853749,
+      "flood_score": 0.23557205896443087,
+      "composite": 0.42825257275421624,
+      "rate_total": 0.0935305754370296,
+      "cotton_yield": 389
+    },
+    {
+      "year": 2024,
+      "drought_score": 0.32000539604885303,
+      "flood_score": 0.16630676758182403,
+      "composite": 0.2480019552107517,
+      "rate_total": 0.05455939845295558,
+      "cotton_yield": 290
+    }
+  ]
+}
